@@ -6,7 +6,7 @@ const cloudinary = require("cloudinary");
 // Handling Uncaught Execption => anything not defind Uncaught Execption 
 
 process.on("uncaughtException", (err) => {
-    console.log(`Error , ${err.message}`);
+    // console.log(`Error , ${err.message}`);
     console.log(`Shutting down the server due to Uncaught Exception`);
     process.exit(1);
 })
@@ -33,7 +33,7 @@ const server = app.listen(PORT, () => {
 
 // Unhandled Promise Rejection  => server issue
 process.on("unhandledRejection", (err) => {
-    console.log(`Error : ${err.message}`);
+    // console.log(`Error : ${err.message}`);
     console.log(`Shutting down the server due to Unhandled Promise Rejection`);
     // if there any issue occures eg : broken host link eg : then return msg and server will close
     server.close(() => {

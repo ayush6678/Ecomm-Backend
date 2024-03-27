@@ -9,11 +9,12 @@ const cloudinary = require("cloudinary");
 
 // signUp controller>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 exports.registerUser = asyncWrapper(async (req, res) => {
-  const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
-    folder: "Avatar", // this folder cloudainry data base manage by us
-    width: 150,
-    crop: "scale",
-  });
+
+  // const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+  //   folder: "Avatar", // this folder cloudainry data base manage by us
+  //   width: 150,
+  //   crop: "scale",
+  // });
 
 
 
@@ -22,10 +23,6 @@ exports.registerUser = asyncWrapper(async (req, res) => {
     name,
     password,
     email,
-    avatar: {
-      public_id: myCloud.public_id,
-      url: myCloud.secure_url,
-    },
   });
 
   // sending the res and staus code along with token using sendJWtToken method
@@ -208,24 +205,24 @@ exports.updateProfile = asyncWrapper(async (req, res, next) => {
   };
 
   // if avatar not empty then
-  if (req.body.avatar !== "") {
-    const user = await userModel.findById(req.user.id);
-    const imageId = user.avatar.public_id;
+  // if (req.body.avatar !== "") {
+  //   const user = await userModel.findById(req.user.id);
+  //   const imageId = user.avatar.public_id;
 
-    //  await cloudinary.v2.uploader.destroy(imageId); // delete old Image from cloudnairy
-    await cloudinary.v2.uploader.destroy(imageId);
+  //   //  await cloudinary.v2.uploader.destroy(imageId); // delete old Image from cloudnairy
+  //   await cloudinary.v2.uploader.destroy(imageId);
 
-    const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
-      folder: "Avatar", // this folder cloudainry data base manage by us
-      width: 150,
-      crop: "scale",
-    });
+  //   const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+  //     folder: "Avatar", // this folder cloudainry data base manage by us
+  //     width: 150,
+  //     crop: "scale",
+  //   });
 
-    newUserData.avatar = {
-      public_id: myCloud.public_id, // id for img
-      url: myCloud.secure_url, // new User data
-    };
-  }
+  //   newUserData.avatar = {
+  //     public_id: myCloud.public_id, // id for img
+  //     url: myCloud.secure_url, // new User data
+  //   };
+  // }
 
   // set new value of user
   const user = await userModel.findByIdAndUpdate(req.user.id, newUserData, {
@@ -288,8 +285,8 @@ exports.deleteUser = asyncWrapper(async (req, res, next) => {
   }
 
   // delete iamge from cloud as well
-  const imageId = user.avatar.public_id;
-  await cloudinary.v2.uploader.destroy(imageId);
+  // const imageId = user.avatar.public_id;
+  // await cloudinary.v2.uploader.destroy(imageId);
 
   // if user founded the just remove from database
   await user.remove();

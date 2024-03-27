@@ -8,7 +8,7 @@ const cloudinary = require("cloudinary");
 exports.createProduct = asyncWrapper(async (req, res) => {
 
   let images = [];
-  console.log(req.body)
+  // console.log(req.body)
 
   if (req.body.images) {
     if (typeof req.body.images === "string") {
@@ -154,8 +154,8 @@ exports.updateProduct = asyncWrapper(async (req, res, next) => {
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  delete product --admin  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 exports.deleteProduct = asyncWrapper(async (req, res, next) => {
   let product = await ProductModel.findById(req.params.id);
-  console.log(product);
-  
+  // console.log(product);
+
   if (!product) {
     return next(new ErrorHandler("Product not found", 404));
   }
@@ -197,7 +197,6 @@ exports.createProductReview = asyncWrapper(async (req, res, next) => {
     title: title,
     comment: comment,
     recommend: recommend,
-    avatar: req.user.avatar.url, // Add user avatar URL to the review object
   };
 
   const product = await ProductModel.findById(productId);

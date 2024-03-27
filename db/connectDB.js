@@ -9,7 +9,7 @@ function connectDB(){
             console.log("DB_connected");
         })
         .catch(function (err) {
-            console.log("error", err);
+            console.log(err);
         })
 }
 

@@ -9,7 +9,7 @@ exports.isAuthentictedUser = asyncWrapper(async (req, res, next) => {
     // const { token } = req.cookies;
     const token = req.headers['authorization'];
 
-    console.log(req);
+    // console.log(req);
     // if there is no token found
     if (!token) {
         return next(new ErrorHandler("Please Login to access this resource", 401));
