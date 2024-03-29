@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b14f59d1.css",
+    "main.js": "/static/js/main.1ae2ea4e.js",
+    "static/media/user.png": "/static/media/user.a5c24708e0b1812fdbc5.png",
+    "static/media/order.png": "/static/media/order.28e2ce4089a5c5325a47.png",
+    "static/media/products.png": "/static/media/products.e0f41533dcc4e92ed743.png",
+    "static/media/tc.jpg": "/static/media/tc.fcd160ea73076b9798c1.jpg",
+    "static/media/3.jpg": "/static/media/3.dc3d6ff1a36fcf927354.jpg",
+    "static/media/4.jpg": "/static/media/4.a79bebb506a1924d2fb8.jpg",
+    "static/media/1.jpg": "/static/media/1.4003446023b113cea8c3.jpg",
+    "static/media/2.jpg": "/static/media/2.c89bfcc9d50c5280d7e4.jpg",
+    "static/media/LoaderBlack.svg": "/static/media/LoaderBlack.9d15429ed1af3e44cfe1de813ca08b76.svg",
+    "static/media/app-store-black.svg": "/static/media/app-store-black.24150bb76b7cddc71b6975ee7c38e583.svg",
+    "static/media/logo.png": "/static/media/logo.1263e68b0e4cb77606c2.png",
+    "static/media/google-play-black.svg": "/static/media/google-play-black.c0bc3350b9a1f59b7de6a67d02bfb57c.svg",
+    "static/media/paytm.svg": "/static/media/paytm.0c8cf558f2e0c4f9aaa359ee6c7ad634.svg",
+    "static/media/visa (1).svg": "/static/media/visa (1).5e51695a3be76ccf0f4a2c0003df3cee.svg",
+    "index.html": "/index.html",
+    "static/media/mastercard.svg": "/static/media/mastercard.7d056af02786552977cff392eb03b1a2.svg",
+    "main.b14f59d1.css.map": "/static/css/main.b14f59d1.css.map",
+    "main.1ae2ea4e.js.map": "/static/js/main.1ae2ea4e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b14f59d1.css",
+    "static/js/main.1ae2ea4e.js"
+  ]
+}
