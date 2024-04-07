@@ -22,7 +22,7 @@ app.use(fileUpload());
 app.use(errorMiddleware);
 app.use(cors(
   // { origin: 'http://localhost:3000', credentials: true, exposedHeaders: ['Set-Cookie', 'Date', 'ETag'] }
-  ));
+));
 app.use("/api/v1", product);
 app.use("/api/v1", user);
 app.use("/api/v1", order);
