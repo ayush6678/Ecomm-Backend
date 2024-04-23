@@ -7,52 +7,29 @@ const cloudinary = require("cloudinary");
 // >>>>>>>>>>>>>>>>>>>>> createProduct Admin route  >>>>>>>>>>>>>>>>>>>>>>>>
 exports.createProduct = asyncWrapper(async (req, res) => {
 
-  let images = [];
+  const images = [];
   // console.log(req.body)
+  const imagesLinks = [];
 
   if (req.body.images) {
     if (typeof req.body.images === "string") {
       images.push(req.body.images);
     } else {
-      images = req.body.images;
-    }
-
-    const imagesLinks = [];
-
-    // Split images into chunks due to cloudinary upload limits only 3 images can be uploaded at a time so we are splitting into chunks and uploading them separately eg: 9 images will be split into 3 chunks and uploaded separately
-    const chunkSize = 3;
-    const imageChunks = [];
-    while (images.length > 0) {
-      imageChunks.push(images.splice(0, chunkSize));
+      for(let image of req.body.images)
+      images.push(image);
     }
 
 
-    // Upload images in separate requests. for loop will run 3 times if there are 9 images to upload each time uploading 3 images at a time
-    for (let chunk of imageChunks) {
-      const uploadPromises = chunk.map((img) =>
-        cloudinary.v2.uploader.upload(img, {
-          folder: "Products",
-        })
-      );
-
-
-      const results = await Promise.all(uploadPromises); // wait for all the promises to resolve and store the results in results array eg: [{}, {}, {}] 3 images uploaded successfully and their details are stored in results array
-
-      for (let result of results) {
-        imagesLinks.push({
-          product_id: result.public_id,
-          url: result.secure_url,
-        });
-      }
-    }
-
-
-    // req.body.user = req.user.id;
-    req.body.images = imagesLinks;
   }
+  for (let result of images) {
+    imagesLinks.push({
+      url: result,
+    });
+  }
+  // req.body.user = req.user.id;
+  req.body.images = imagesLinks;
 
   const data = await ProductModel.create(req.body);
-
   res.status(200).json({ success: true, data: data });
 });
 
