@@ -16,7 +16,7 @@ exports.newOrder = asyncWrapper(async (req, res, next) => {
   } = req.body;
 
   // create order :
-  const order = await orderModel.create({  
+  const order = await orderModel.create({
     shippingInfo,
     orderItems,
     paymentInfo,
@@ -80,10 +80,10 @@ exports.getAllOrders = asyncWrapper(async (req, res, next) => {
 
 // update Order Status -- Admin
 exports.updateOrder = asyncWrapper(async (req, res, next) => {
-   
+
   const order = await orderModel.findById(req.params.id);
 
-    
+
   if (!order) {
     return next(new ErrorHandler("Order not found with this id", 400));
   }
@@ -93,16 +93,16 @@ exports.updateOrder = asyncWrapper(async (req, res, next) => {
 
   // when orderd is shipped and need to update order status to deliverd then. pass order id updateStock function and also pass quantity of the product
   // orderItems is the array of object in orderSchema with {name , productId , quantity , phoneNo .. so on}propoerty
-    if (req.body.status === "Shipped"){
- order.orderItems.forEach(async (orderItem) => {
-   await updateStock(orderItem.productId, orderItem.quantity);
- });
-    }
- 
+  if (req.body.status === "Shipped") {
+    order.orderItems.forEach(async (orderItem) => {
+      await updateStock(orderItem.productId, orderItem.quantity);
+    });
+  }
+
 
   // once order quantity is reduced in productModel then update status as oredrStatus well
   order.orderStatus = req.body.status;
- 
+
   // now also set delivery time once order Delivered:
   if (order.orderStatus === "Delivered") {
     order.deliveredAt = Date.now();
@@ -120,7 +120,7 @@ async function updateStock(id, quantity) {
   try {
     const product = await productModel.findById(id);
     if (!product) {
-      throw new ErrorHandler("Product not found", 404); 
+      throw new ErrorHandler("Product not found", 404);
     }
 
     // Update the stock of the product using the order quantity
@@ -128,7 +128,7 @@ async function updateStock(id, quantity) {
 
     await product.save({ validateBeforeSave: false });
   } catch (error) {
-    throw new ErrorHandler("Product not found", 404); 
+    throw new ErrorHandler("Product not found", 404);
   }
 }
 
@@ -140,7 +140,7 @@ exports.deleteOrder = asyncWrapper(async (req, res, next) => {
     return next(new ErrorHandler("Order not found with given Id", 400));
   }
 
-  await order.remove();
+  await order.deleteOne();
 
   res.status(200).json({
     success: true,

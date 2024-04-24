@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d6b626f0.css",
-    "main.js": "/static/js/main.8a950d3a.js",
+    "main.js": "/static/js/main.55632be8.js",
     "static/media/user.png": "/static/media/user.a5c24708e0b1812fdbc5.png",
     "static/media/order.png": "/static/media/order.28e2ce4089a5c5325a47.png",
     "static/media/products.png": "/static/media/products.e0f41533dcc4e92ed743.png",
@@ -19,10 +19,10 @@
     "index.html": "/index.html",
     "static/media/mastercard.svg": "/static/media/mastercard.7d056af02786552977cff392eb03b1a2.svg",
     "main.d6b626f0.css.map": "/static/css/main.d6b626f0.css.map",
-    "main.8a950d3a.js.map": "/static/js/main.8a950d3a.js.map"
+    "main.55632be8.js.map": "/static/js/main.55632be8.js.map"
   },
   "entrypoints": [
     "static/css/main.d6b626f0.css",
-    "static/js/main.8a950d3a.js"
+    "static/js/main.55632be8.js"
   ]
 }

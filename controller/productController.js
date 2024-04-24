@@ -15,8 +15,8 @@ exports.createProduct = asyncWrapper(async (req, res) => {
     if (typeof req.body.images === "string") {
       images.push(req.body.images);
     } else {
-      for(let image of req.body.images)
-      images.push(image);
+      for (let image of req.body.images)
+        images.push(image);
     }
 
 
@@ -59,6 +59,7 @@ exports.getAllProducts = asyncWrapper(async (req, res) => {
     resultPerPage: resultPerPage,
     filteredProductCount: filteredProductCount,
   });
+
 });
 
 
@@ -137,12 +138,7 @@ exports.deleteProduct = asyncWrapper(async (req, res, next) => {
     return next(new ErrorHandler("Product not found", 404));
   }
 
-  // Deleting Images From Cloudinary
-  for (let i = 0; i < product.images.length; i++) {
-    await cloudinary.v2.uploader.destroy(product.images[i].product_id);
-  }
-
-  await product.remove();
+  await product.deleteOne();
 
   res.status(201).json({
     success: true,
