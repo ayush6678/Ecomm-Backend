@@ -32,6 +32,8 @@ exports.newOrder = asyncWrapper(async (req, res, next) => {
     success: true,
     order,
   });
+
+  console.log(res)
 });
 
 //>>>>>>>>>>>> getSingleOrder >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
