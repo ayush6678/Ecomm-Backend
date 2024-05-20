@@ -35,7 +35,7 @@ exports.createProduct = asyncWrapper(async (req, res) => {
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> get all product >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 exports.getAllProducts = asyncWrapper(async (req, res) => {
-  const resultPerPage = 6; // Number of products visible per page
+  const resultPerPage = 100; // Number of products visible per page
   const productsCount = await ProductModel.countDocuments(); // Get total number of products
 
   // Create an instance of the ApiFeatures class, passing the ProductModel.find() query and req.query (queryString)

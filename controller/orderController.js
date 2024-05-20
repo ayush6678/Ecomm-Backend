@@ -6,6 +6,7 @@ const ErrorHandler = require("../utils/errorHandler");
 //>>>>>>>>>>>>>>>  create a order    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 exports.newOrder = asyncWrapper(async (req, res, next) => {
   const {
+    ID,
     shippingInfo,
     orderItems,
     paymentInfo,
@@ -17,6 +18,7 @@ exports.newOrder = asyncWrapper(async (req, res, next) => {
 
   // create order :
   const order = await orderModel.create({
+    ID,
     shippingInfo,
     orderItems,
     paymentInfo,

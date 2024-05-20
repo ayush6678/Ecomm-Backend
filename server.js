@@ -40,3 +40,67 @@ process.on("unhandledRejection", (err) => {
         process.exit(1);
     })
 })
+
+
+// const axios = require('axios');
+
+// const authenticate = async () => {
+//     try {
+//         const response = await axios.post('https://apiv2.shiprocket.in/v1/external/auth/login', {
+//             email: 'ayush.6678@gmail.com',
+//             password: '#Plusplus1'
+//         });
+//         return response.data.token;
+//     } catch (error) {
+//         console.error('Error authenticating:', error.response.data);
+//         throw error;
+//     }
+// };
+
+// const getTrackingDetails = async (token, orderId) => {
+//     try {
+//         const response = await axios.get(`https://apiv2.shiprocket.in/v1/external/courier/track/shipment/${orderId}`, {
+//             headers: {
+//                 'Authorization': `Bearer ${token}`
+//             }
+//         });
+//         return response.data;
+//     } catch (error) {
+//         console.error('Error fetching tracking details:', error.response.data);
+//         throw error;
+//     }
+// };
+
+// const main = async () => {
+//     try {
+//         const token = await authenticate();
+//         const orderId = '3849842352'; // Replace with your actual order ID
+
+//         var axios = require('axios');
+
+//         var config = {
+//             method: 'get',
+//             maxBodyLength: Infinity,
+//             url: 'https://apiv2.shiprocket.in/v1/external/orders',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Authorization': `Bearer ${token}`
+//             }
+//         };
+
+//         axios(config)
+//             .then(function (response) {
+//                 console.log((response.data));
+//             })
+//             .catch(function (error) {
+//                 console.log("error");
+//             });
+
+//         const trackingDetails = await getTrackingDetails(token, orderId);
+//         console.log('Tracking Details:', trackingDetails);
+//     } catch (error) {
+//         console.error('Error:', error.message);
+//     }
+// };
+
+// main();

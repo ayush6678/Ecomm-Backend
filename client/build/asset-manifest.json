@@ -1,28 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.d6b626f0.css",
-    "main.js": "/static/js/main.f466286a.js",
-    "static/media/user.png": "/static/media/user.a5c24708e0b1812fdbc5.png",
-    "static/media/order.png": "/static/media/order.28e2ce4089a5c5325a47.png",
-    "static/media/products.png": "/static/media/products.e0f41533dcc4e92ed743.png",
-    "static/media/tc.jpg": "/static/media/tc.fcd160ea73076b9798c1.jpg",
-    "static/media/3.jpg": "/static/media/3.dc3d6ff1a36fcf927354.jpg",
-    "static/media/4.jpg": "/static/media/4.a79bebb506a1924d2fb8.jpg",
-    "static/media/1.jpg": "/static/media/1.4003446023b113cea8c3.jpg",
+    "main.css": "/static/css/main.82a55196.css",
+    "main.js": "/static/js/main.df5d55f5.js",
+    "static/media/2L.png": "/static/media/2L.fac57fd263996dec97ad.png",
+    "static/media/4L.png": "/static/media/4L.6c396844339fb6341793.png",
+    "static/media/3L.png": "/static/media/3L.a003032c20a3ee5def83.png",
+    "static/media/3.png": "/static/media/3.74efd7ffc5c12f10268a.png",
+    "static/media/2.png": "/static/media/2.94360bb2ac082b7babc6.png",
+    "static/media/4.png": "/static/media/4.2fbb82e945a79fec1132.png",
+    "static/media/1L.png": "/static/media/1L.3d83b0075da1d3397ad5.png",
     "static/media/DIMIS___.TTF": "/static/media/DIMIS___.71f067baf8f0d32ee422.TTF",
-    "static/media/LoaderBlack.svg": "/static/media/LoaderBlack.9d15429ed1af3e44cfe1de813ca08b76.svg",
-    "static/media/app-store-black.svg": "/static/media/app-store-black.24150bb76b7cddc71b6975ee7c38e583.svg",
-    "static/media/logo.png": "/static/media/logo.1263e68b0e4cb77606c2.png",
-    "static/media/google-play-black.svg": "/static/media/google-play-black.c0bc3350b9a1f59b7de6a67d02bfb57c.svg",
-    "static/media/paytm.svg": "/static/media/paytm.0c8cf558f2e0c4f9aaa359ee6c7ad634.svg",
-    "static/media/visa (1).svg": "/static/media/visa (1).5e51695a3be76ccf0f4a2c0003df3cee.svg",
+    "static/media/1.png": "/static/media/1.496f70ff37c4917aae89.png",
     "index.html": "/index.html",
-    "static/media/mastercard.svg": "/static/media/mastercard.7d056af02786552977cff392eb03b1a2.svg",
-    "main.d6b626f0.css.map": "/static/css/main.d6b626f0.css.map",
-    "main.f466286a.js.map": "/static/js/main.f466286a.js.map"
+    "main.82a55196.css.map": "/static/css/main.82a55196.css.map",
+    "main.df5d55f5.js.map": "/static/js/main.df5d55f5.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6b626f0.css",
-    "static/js/main.f466286a.js"
+    "static/css/main.82a55196.css",
+    "static/js/main.df5d55f5.js"
   ]
 }

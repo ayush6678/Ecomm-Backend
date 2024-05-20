@@ -2,12 +2,16 @@ const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
   // order shiping address
+  ID: {
+    type: String,
+    required: true
+  },
   shippingInfo: {
-    firstName : {
+    firstName: {
       type: String,
       required: true,
     },
-    lastName : {
+    lastName: {
       type: String,
       required: true,
     },
@@ -38,11 +42,11 @@ const orderSchema = new mongoose.Schema({
       type: Number,
       required: true,
     },
-    email : {
+    email: {
       type: String,
       required: true,
     },
-    
+
   },
 
   // order item details array
@@ -69,7 +73,7 @@ const orderSchema = new mongoose.Schema({
 
       productId: {
         type: mongoose.Schema.ObjectId,
-        ref: "ProductModel", 
+        ref: "ProductModel",
         required: true,
       },
     },
@@ -135,4 +139,4 @@ const orderSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("OrdersModel" , orderSchema);
+module.exports = mongoose.model("OrdersModel", orderSchema);
