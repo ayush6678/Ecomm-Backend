@@ -92,27 +92,17 @@ exports.updateProduct = asyncWrapper(async (req, res, next) => {
   if (typeof req.body.images === "string") {
     images.push(req.body.images);
   } else {
-    images = req.body.images;
+    for (let image of req.body.images)
+      images.push(image);
   }
 
   if (images !== undefined) {
-    // Deleting Images From Cloudinary
-    for (let i = 0; i < product.images.length; i++) {
-      await cloudinary.v2.uploader.destroy(product.images[i].product_id);
-    }
-
     const imagesLinks = [];
     for (let img of images) {
-      const result = await cloudinary.v2.uploader.upload(img, {
-        folder: "Products",
-      });
-
       imagesLinks.push({
-        product_id: result.public_id,
-        url: result.secure_url,
+        url: img,
       });
     }
-
     req.body.images = imagesLinks;
   }
 
